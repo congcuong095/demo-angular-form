@@ -5,5 +5,5 @@
 
 ## Build and run application
 
-- Install `Live Server Extention`
+- Install `Live Server Extention` on VS Code (Visual Studio Code)
 - Open file `index.html` then run `Live server`
