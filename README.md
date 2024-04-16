@@ -5,5 +5,5 @@
 
 ## Build and run application
 
-- Install **Live Server Extention**
-- Open file **index.html** then run **Live server**
+- Install `Live Server Extention`
+- Open file `index.html` then run `Live server`

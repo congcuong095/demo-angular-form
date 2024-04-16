@@ -1,23 +1,21 @@
 const app = angular.module("productApp", []);
 
+class ProductController {
+  constructor($http) {
+    var vm = this;
+    vm.product = {};
+    vm.$http = $http;
 
-const controllerFunc =  ($scope, $http) => {
-    $scope.product = {};
-    $scope.submitProduct =  () => {
-      console.log($scope.product);
+    vm.submitProduct = function () {
+      console.log(vm.product);
 
-      // var url = "url";
-      // var data = $scope.product;
-
-      // $http.post(url, data).then(
-      //    (response) => {
-      //     console.log("Product submitted successfully!", response);
-      //   },
-      //    (error) => {
-      //     console.log("Error submitting product", error);
-      //   }
-      // );
+      // vm.$http.post('/api/product', vm.product).then(response => {
+      //   console.log('Product submitted successfully');
+      // }).catch(error => {
+      //   console.error('Error submitting product', error);
+      // });
     };
   }
+}
 
-  app.controller("ProductController", ["$scope", "$http", controllerFunc]);
+app.controller("ProductController", ["$http", ProductController]);

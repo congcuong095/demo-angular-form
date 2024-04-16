@@ -12,27 +12,27 @@
     <script src="numberService.js"></script>
 </head>
 
-<body ng-controller="ProductController">
+<body ng-controller="ProductController as ctrl">
 
     <div class="container-sm mt-5 shadow border p-4 rounded" style="max-width: 500px">
         <h2>Nhập Thông Tin Sản Phẩm</h2>
-        <form id="formMain" novalidate class="form-horizontal" ng-submit="submitProduct()">
+        <form id="formMain" novalidate class="form-horizontal" ng-submit="ctrl.submitProduct()">
             <div class="form-group">
                 <label for="productId">Mã sản phẩm:</label>
-                <input type="text" id="productId" class="form-control" ng-model="product.id">
+                <input type="text" id="productId" class="form-control" ng-model="ctrl.product.id">
             </div>
 
             <div class="form-group">
                 <label for="productName">Tên sản phẩm:</label>
-                <input type="text" id="productName" class="form-control" ng-model="product.name">
+                <input type="text" id="productName" class="form-control" ng-model="ctrl.product.name">
             </div>
 
-            <price-input label="Giá Mua:" ng-model="product.purchasePrice"></price-input>
-            <price-input label="Giá Bán:" ng-model="product.salePrice"></price-input>
+            <price-input label="Giá Mua:" ng-model="ctrl.product.purchasePrice"></price-input>
+            <price-input label="Giá Bán:" ng-model="ctrl.product.salePrice"></price-input>
 
             <div class="form-group">
                 <label for="productDate">Ngày sản xuất:</label>
-                <input type="date" id="productDate" class="form-control" ng-model="product.productionDate">
+                <input type="date" id="productDate" class="form-control" ng-model="ctrl.product.productionDate">
             </div>
 
             <button id="buttonSubmit" type="submit" class="btn btn-primary">Lưu</button>
