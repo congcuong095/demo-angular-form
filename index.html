@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="productApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="priceInputDirective.js"></script>
+    <script src="numberService.js"></script>
+</head>
+
+<body ng-controller="ProductController">
+
+    <div class="container-sm mt-5 shadow border p-4 rounded" style="max-width: 500px">
+        <h2>Nhập Thông Tin Sản Phẩm</h2>
+        <form id="formMain" novalidate class="form-horizontal" ng-submit="submitProduct()">
+            <div class="form-group">
+                <label for="productId">Mã sản phẩm:</label>
+                <input type="text" id="productId" class="form-control" ng-model="product.id">
+            </div>
+
+            <div class="form-group">
+                <label for="productName">Tên sản phẩm:</label>
+                <input type="text" id="productName" class="form-control" ng-model="product.name">
+            </div>
+
+            <price-input label="Giá Mua:" ng-model="product.purchasePrice"></price-input>
+            <price-input label="Giá Bán:" ng-model="product.salePrice"></price-input>
+
+            <div class="form-group">
+                <label for="productDate">Ngày sản xuất:</label>
+                <input type="date" id="productDate" class="form-control" ng-model="product.productionDate">
+            </div>
+
+            <button id="buttonSubmit" type="submit" class="btn btn-primary">Lưu</button>
+        </form>
+    </div>
+</body>
+
+</html>
